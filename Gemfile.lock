@@ -4,6 +4,7 @@ GEM
     RedCloth (4.2.9)
     activesupport (2.3.14)
     args_parser (0.1.2)
+    eventmachine (1.0.0)
     hoe (3.1.0)
       rake (~> 0.8)
     minitest (4.1.0)
@@ -24,6 +25,7 @@ PLATFORMS
 
 DEPENDENCIES
   args_parser
+  eventmachine
   hoe
   minitest
   newgem
