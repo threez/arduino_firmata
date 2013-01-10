@@ -53,11 +53,11 @@ module ArduinoFirmata
         @thread_status = false
       }.run
 
-      (0...6).each do |i|
+      0.upto(params[:analog_input_pins]-1).each do |i|
         write(REPORT_ANALOG | i)
         write 1
       end
-      (0...2).each do |i|
+      0.upto(1).each do |i|
         write(REPORT_DIGITAL | i)
         write 1
       end

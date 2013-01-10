@@ -6,7 +6,8 @@ module ArduinoFirmata
         :bps => 57600,
         :bit => 8,
         :parity => 0,
-        :stopbit => 1
+        :stopbit => 1,
+        :analog_input_pins => 6
       }
     end
   end
