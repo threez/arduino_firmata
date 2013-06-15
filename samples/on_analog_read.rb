@@ -4,12 +4,11 @@ require 'rubygems'
 require 'arduino_firmata'
 
 arduino = ArduinoFirmata.connect ARGV.shift
+arduino.pin_mode 0, ArduinoFirmata::ANALOG
 
 arduino.on :analog_read do |pin, value|
-  if pin == 0
-    puts "analog pin #{pin} changed #{value}"
-    arduino.analog_write 11, value
-  end
+  puts "analog pin #{pin} changed #{value}"
+  arduino.analog_write 11, value if pin == 0
 end
 
 led_stat = false

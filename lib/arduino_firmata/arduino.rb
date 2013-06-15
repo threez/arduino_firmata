@@ -56,10 +56,6 @@ module ArduinoFirmata
         @thread_status = false
       end
 
-      (0...6).each do |i|
-        write(REPORT_ANALOG | i)
-        write 1
-      end
       (0...2).each do |i|
         write(REPORT_DIGITAL | i)
         write 1
@@ -121,6 +117,11 @@ module ArduinoFirmata
     end
 
     def pin_mode(pin, mode)
+      if mode == ANALOG
+        write(REPORT_ANALOG | pin)
+        write 1
+        return mode
+      end
       write SET_PIN_MODE
       write pin
       mode = case mode

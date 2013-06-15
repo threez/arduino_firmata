@@ -4,6 +4,7 @@ require 'rubygems'
 require 'arduino_firmata'
 
 arduino = ArduinoFirmata.connect ARGV.shift
+arduino.pin_mode 0, ArduinoFirmata::ANALOG
 
 loop do
   an = arduino.analog_read 0
