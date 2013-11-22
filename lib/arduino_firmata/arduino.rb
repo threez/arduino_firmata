@@ -10,7 +10,7 @@ module ArduinoFirmata
       @nonblock_io = !!params[:nonblock_io]
       @eventmachine = !!params[:eventmachine]
       @read_byte_size = eventmachine ? 256 : 9600
-      @process_input_interval = eventmachine ? 0.0001 : 0.01
+      @process_input_interval = 0.5
       @status = Status::CLOSE
       @wait_for_data = 0
       @execute_multi_byte_command = 0
